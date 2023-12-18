@@ -1,0 +1,9 @@
+<mujoco model="common-rig scene">
+
+  <!-- Common-Rig-H -->
+  <include file="common_rig_h.xml" />
+
+  <!-- Floor and Sky -->
+  <include file="../object/floor_sky.xml" />
+
+</mujoco>

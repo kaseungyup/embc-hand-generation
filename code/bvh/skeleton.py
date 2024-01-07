@@ -599,18 +599,17 @@ def process_bvhfile(filename, DEBUG=0):
     #
     # my_bvh.read() returns None on success and throws an exception on failure.
 
-    print("Reading BVH file...",)
+    if DEBUG: print("Reading BVH file...",)
     my_bvh = ReadBVH(filename)  # Doesn't actually read the file, just creates
     # a readbvh object and sets up the file for
     # reading in the next line.
     my_bvh.read()  # Reads and parses the file.
 
     hips = process_bvhnode(my_bvh.root)  # Create joint hierarchy
-    print("done")
+    if DEBUG: print("done")
 
-    print("Building skeleton...",)
+    if DEBUG: print("Building skeleton...",)
     myskeleton = Skeleton(hips, keyframes=my_bvh.keyframes, frames=my_bvh.frames, dt=my_bvh.dt)
-    print("done")
-    if DEBUG:
-        print("skeleton is: ", myskeleton)
+    if DEBUG: print("done")
+    if DEBUG: print("skeleton is: ", myskeleton)
     return myskeleton

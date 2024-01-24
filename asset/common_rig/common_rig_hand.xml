@@ -1,9 +1,9 @@
-<mujoco model="common-rig-h">
+<mujoco model="common-rig-hand">
     <!--  
             Robot Intelligence Lab
-            Common Rig (Custom Humanoid) model
+            Common Rig with Hand model
             
-            @ Contact us : taemoon-jeong (motor_moon94@korea.ac.kr)
+            Contact: Seungyup Ka (seungyup dash ka at korea dot ac dot kr)
     -->
     <compiler coordinate="local" inertiafromgeom="true" angle="radian"/>
 
@@ -51,10 +51,10 @@
                     <joint name="spinex" type="hinge" pos="0 0 0" axis="1 0 0" range="-0.436111 0.785" damping="60" stiffness="600" armature="0.02"/>
                     <joint name="spinez" type="hinge" pos="0 0 0" axis="0 0 1" range="-0.436111 0.785" damping="60" stiffness="600" armature="0.02"/>
                     <body name="neck" pos="0 0 0.2263381" euler="0 0 0">
-                        <geom name="neck2rclavicle" type="capsule" fromto="0 0 0 -0.0182683 -0.0119726 0.0730251"  size="0.035"/>
-                        <geom name="neck2lclavicle" type="capsule" fromto="0 0 0 -0.0182683 0.0119726 0.0730251"  size="0.035"/>
+                        <geom name="neck2rclavicle" type="capsule" fromto="0 0 0 -0.0 -0.0119726 0.0730251"  size="0.035"/>
+                        <geom name="neck2lclavicle" type="capsule" fromto="0 0 0 -0.0 0.0119726 0.0730251"  size="0.035"/>
                         <geom name="neck2head" type="capsule" fromto="0 0 0 0 0 0.1817364"  size="0.035"/>
-                        <body name="right_clavicle" pos="-0.0182683 -0.0119726 0.0730251" euler="0 0 0">
+                        <body name="right_clavicle" pos="-0.0 -0.0119726 0.0730251" euler="0 0 0">
                             <geom name="rclavicle2rshoulder" type="capsule" fromto="0 0 0 0 -0.155151 0"  size="0.035"/>
                             <joint name="rc" type="hinge" pos="0 0 0" axis="1 0 0" range="-0.261793 0.261793" damping="60" stiffness="600" armature="0.02"/>
                             <body name="right_shoulder" pos="0 -0.155151 0" euler="0 0 0">
@@ -66,7 +66,7 @@
                                     <geom name="relbow2rwrist" type="capsule" fromto="0 0 0 0 -0.270311 0"  size="0.035"/>
                                     <joint name="re" type="hinge" pos="0 0 0" axis="0 0 1" range="0.01 2.61666666667" stiffness="150" damping="15" armature="0.0028"/>
                                     <body name="right_wrist" pos="0 -0.270311 0" euler="0 0 0">
-                                        <geom name="rwrist2rmiddle" type="capsule" fromto="0 0 0 0 -0.032330 -0.003781" size="0.0075"/>
+                                        <!-- <geom name="rwrist2rmiddle" type="capsule" fromto="0 0 0 0 -0.032330 -0.003781" size="0.0075"/> -->
                                         <joint name="rw1" type="hinge" pos="0 0 0" axis="0 1 0" range="-3.141592 3.141592" damping="5" stiffness="50" armature="0.02"/>
                                         <joint name="rw2" type="hinge" pos="0 0 0" axis="0 0 1" range="-3.141592 3.141592" damping="5" stiffness="50" armature="0.02"/>
                                         <joint name="rw3" type="hinge" pos="0 0 0" axis="1 0 0" range="-3.141592 3.141592" damping="5" stiffness="50" armature="0.02"/>
@@ -155,7 +155,7 @@
                                 </body>
                             </body>
                         </body>
-                        <body name="left_clavicle" pos="-0.0182683 0.0119726 0.0730251" euler="0 0 0">
+                        <body name="left_clavicle" pos="-0.0 0.0119726 0.0730251" euler="0 0 0">
                             <geom name="lclavicle2lshoulder" type="capsule" fromto="0 0 0 0 0.155151 0"  size="0.035"/>
                             <joint name="lc" type="hinge" pos="0 0 0" axis="1 0 0" range="-0.261793 0.261793" damping="60" stiffness="600" armature="0.02"/>
                             <body name="left_shoulder" pos="0 0.155151 0" euler="0 0 0">
@@ -167,7 +167,7 @@
                                     <geom name="lelbow2lwrist" type="capsule" fromto="0 0 0 0 0.270311 0"  size="0.035" />
                                     <joint name="le" type="hinge" pos="0 0 0" axis="0 0 1" range="-2.61666666667 -0.01" stiffness="150" damping="15" armature="0.0028" />
                                     <body name="left_wrist" pos="0 0.270311 0" euler="0 0 0">
-                                        <geom name="lwrist2lmiddle" type="capsule" fromto="0 0 0 0 0.032330 -0.003781" size="0.0075"/>
+                                        <!-- <geom name="lwrist2lmiddle" type="capsule" fromto="0 0 0 0 0.032330 -0.003781" size="0.0075"/> -->
                                         <joint name="lw1" type="hinge" pos="0 0 0" axis="0 1 0" range="-3.141592 3.141592" damping="5" stiffness="50" armature="0.02" />
                                         <joint name="lw2" type="hinge" pos="0 0 0" axis="0 0 1" range="-3.141592 3.141592" damping="5" stiffness="50" armature="0.02" />
                                         <joint name="lw3" type="hinge" pos="0 0 0" axis="1 0 0" range="-3.141592 3.141592" damping="5" stiffness="50" armature="0.02" />
@@ -257,8 +257,8 @@
                             </body>
                         </body>
                         <body name="head" pos="0 0 0.1817364" euler="0 0 0">
-                            <geom name="head" type="box" pos="0 0 0" size="0.06 0.06 0.07" />
-                            <geom name="nose" type="box" pos="0.05 0 0" size="0.05 0.02 0.02" />
+                            <geom name="head" type="box" pos="0 0 0.07" size="0.06 0.06 0.07" />
+                            <geom name="nose" type="box" pos="0.05 0 0.07" size="0.05 0.02 0.02" />
                             <joint name="head1" type="hinge" pos="0 0 0" axis="1 0 0" range="-1.57 1.57" damping="5" stiffness="50" armature="0.02" />
                             <joint name="head2" type="hinge" pos="0 0 0" axis="0 1 0" range="-1.57 1.57" damping="5" stiffness="50" armature="0.02" />
                             <joint name="head3" type="hinge" pos="0 0 0" axis="0 0 1" range="-1.57 1.57" damping="5" stiffness="50" armature="0.02" />
@@ -464,6 +464,11 @@
         <exclude body1="lpinky_l1" body2="lpinky_l2"/>
         <exclude body1="lpinky_l2" body2="lpinky_l3"/>
         <exclude body1="lpinky_l3" body2="lpinky_end"/>
+        
+        <exclude body1="right_clavicle" body2="left_clavicle"/>
+        <exclude body1="right_elbow" body2="rthumb_l1"/>
+        <exclude body1="left_elbow" body2="lthumb_l1"/>
+
     </contact>
 
 

@@ -1,0 +1,6 @@
+<mujoco model="common-rig-hand scene">
+  <!-- SMPL -->
+  <include file="./common_rig_hand.xml" />
+  <!-- Floor and Sky -->
+  <include file="../object/floor_sky.xml" />
+</mujoco>

@@ -199,7 +199,8 @@ class KinematicChainClass(object):
             env.plot_T(p=joint['p'],R=joint['R'],
                        PLOT_AXIS=True,axis_len=axis_len_joint,axis_width=axis_width_joint,
                        PLOT_SPHERE=True,sphere_r=r_joint,sphere_rgba=rgba_joint,
-                       label=joint['name'])
+                    #    label=joint['name'])
+            )
         
         # Plot revolute axis
         for j_idx in range(self.get_n_joint()):
